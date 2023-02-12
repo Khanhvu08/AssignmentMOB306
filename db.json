@@ -1,0 +1,84 @@
+{
+  "product":[
+    {
+      "id": 1,
+      "nameOfStore": "Cửa hàng thịt chó nướng",
+      "addressOfStore": "123 Main St",
+      "phoneNumberOfStore": "555-555-1212",
+      "logoStore": "https://picsum.photos/200",
+      "status": 1
+    },
+    {
+      "id": 2,
+      "nameOfStore": "Store 2",
+      "addressOfStore": "456 Main St",
+      "phoneNumberOfStore": "555-555-1213",
+      "logoStore": "https://picsum.photos/200",
+      "status": 0
+    },
+    {
+      "id": 3,
+      "nameOfStore": "Store 3",
+      "addressOfStore": "789 Main St",
+      "phoneNumberOfStore": "555-555-1214",
+      "logoStore": "https://picsum.photos/200",
+      "status": 1
+    },
+    {
+      "id": 4,
+      "nameOfStore": "Store 4",
+      "addressOfStore": "321 Main St",
+      "phoneNumberOfStore": "555-555-1215",
+      "logoStore": "https://picsum.photos/200",
+      "status": 0
+    },
+    {
+      "id": 5,
+      "nameOfStore": "Store 5",
+      "addressOfStore": "654 Main St",
+      "phoneNumberOfStore": "555-555-1216",
+      "logoStore": "https://picsum.photos/200",
+      "status": 1
+    },
+    {
+      "id": 6,
+      "nameOfStore": "Store 6",
+      "addressOfStore": "987 Main St",
+      "phoneNumberOfStore": "555-555-1217",
+      "logoStore": "https://picsum.photos/200",
+      "status": 0
+    },
+    {
+      "id": 7,
+      "nameOfStore": "Store 7",
+      "addressOfStore": "147 Main St",
+      "phoneNumberOfStore": "555-555-1218",
+      "logoStore": "https://picsum.photos/200",
+      "status": 1
+    },
+    {
+      "id": 8,
+      "nameOfStore": "Store 8",
+      "addressOfStore": "258 Main St",
+      "phoneNumberOfStore": "555-555-1219",
+      "logoStore": "https://picsum.photos/200",
+      "status": 0
+    },
+    {
+      "id": 9,
+      "nameOfStore": "Store 9",
+      "addressOfStore": "369 Main St",
+      "phoneNumberOfStore": "555-555-1220",
+      "logoStore": "https://picsum.photos/200",
+      "status": 1
+    },
+    {
+      "id": 10,
+      "nameOfStore": "Store 10",
+      "addressOfStore": "159 Main St",
+      "phoneNumberOfStore": "555-555-1221",
+      "logoStore": "https://picsum.photos/200",
+      "status": 0
+    }
+  ]
+}
