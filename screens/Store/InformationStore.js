@@ -2,26 +2,43 @@ import {
   StyleSheet,
   Text,
   View,
-  Image,
   TouchableOpacity,
+  Image,
   ImageBackground,
 } from "react-native";
-import React, { useEffect, useState } from "react";
+import React from "react";
 
-const Card = (props) => {
-  const nav = props.navigation;
-  const { listInformation } = props;
-  const { fullName, studentID, avatar } = listInformation;
+const InformationStore = (props) => {
+  const { navigation: nav } = props;
+  const { tempList } = props.route.params;
+  const { logoStore, nameOfStore, addressOfStore, phoneNumberOfStore, status } =
+    tempList;
   return (
     <View style={styles.container}>
       <ImageBackground
         style={styles.image_background}
         imageStyle={{ borderRadius: 20 }}
-        source={require("../assets/mesh_gradient.jpg")}
+        source={require("../../assets/mesh_gradient.jpg")}
       >
         <View style={styles.visitCard}>
           <View style={styles.visitCardHeader}>
-            <Text style={styles.titleHeader}>Abouts Me</Text>
+            <View style={{ flex: 7 }} />
+            <Text style={styles.titleHeader}>Abouts</Text>
+            <TouchableOpacity
+              onPress={() => {
+                nav.goBack();
+              }}
+            >
+              <Image
+                source={require("../../assets/x-icon.png")}
+                style={{
+                  width: 20,
+                  marginRight: 10,
+                  height: 20,
+                  borderRadius: 200,
+                }}
+              />
+            </TouchableOpacity>
           </View>
           <View style={styles.visitCardAvatar}>
             <Image
@@ -31,41 +48,29 @@ const Card = (props) => {
                 borderRadius: 200,
               }}
               source={{
-                uri: avatar,
+                uri: logoStore,
               }}
             />
           </View>
           <View style={styles.visitCardFooter}>
-            <Text style={styles.fullName}>{fullName}</Text>
-            <Text style={styles.fullName}>MSV: {studentID}</Text>
+            <Text style={styles.fullName}>{nameOfStore}</Text>
+            <Text style={styles.fullName}>{addressOfStore}</Text>
+            <Text style={styles.fullName}>{phoneNumberOfStore}</Text>
+            <Text style={styles.fullName}>
+              {status ? (
+                <Text style={{ color: "green" }}>Đang hoạt động</Text>
+              ) : (
+                <Text style={{ color: "red" }}>Tạm đóng</Text>
+              )}
+            </Text>
           </View>
         </View>
       </ImageBackground>
-      <TouchableOpacity
-        style={styles.btnBackToHome}
-        onPress={() => nav.navigate("Manager")}
-      >
-        <Text style={styles.textButton}>Manager</Text>
-      </TouchableOpacity>
     </View>
   );
 };
 
-const Profile = (props) => {
-  const nav = props.navigation;
-  const [listInformation, setlistInformation] = useState([]);
-  useEffect(() => {
-    setlistInformation({
-      fullName: "Vũ Viết Khanh",
-      studentID: "PH28077",
-      avatar:
-        "https://scontent.fhan5-8.fna.fbcdn.net/v/t1.6435-9/158286235_1355382268148507_3942750498553992743_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=HOq0l1URID4AX-OKKNM&_nc_ht=scontent.fhan5-8.fna&oh=00_AfAhMSSG-PWjsmLThg9Zf-PyfZ_l3vahuErh9JIwlE5fLw&oe=6409DC5E",
-    });
-  }, []);
-  return <Card listInformation={listInformation} navigation={nav} />;
-};
-
-export default Profile;
+export default InformationStore;
 
 const styles = StyleSheet.create({
   container: {
@@ -84,12 +89,19 @@ const styles = StyleSheet.create({
   },
   image_background: {
     width: 380,
-    height: 390,
+    height: 450,
     borderRadius: 24,
   },
-  titleHeader: { fontFamily: "Roboto", fontSize: 18, fontWeight: "700" },
+  titleHeader: {
+    fontFamily: "Roboto",
+    fontSize: 18,
+    fontWeight: "700",
+    flex: 8,
+  },
   visitCardHeader: {
+    marginTop: 5,
     flex: 1,
+    flexDirection: "row",
     position: "relative",
   },
   visitCardAvatar: {
@@ -99,6 +111,7 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: "center",
     justifyContent: "center",
+    marginBottom: 30,
   },
   fullName: {
     fontSize: 18,

@@ -1,5 +1,6 @@
 import { StyleSheet, Text, Image, View, TouchableOpacity } from "react-native";
-import React, { useEffect } from "react";
+import React, { useState } from "react";
+
 const Home = (props) => {
   const nav = props.navigation;
   return (
@@ -8,7 +9,9 @@ const Home = (props) => {
       <Text style={styles.text}>Welcome to Store Manager</Text>
       <TouchableOpacity
         style={styles.button}
-        onPress={() => nav.navigate("Manager")}
+        onPress={() => {
+          nav.navigate("Manager");
+        }}
       >
         <Text style={styles.title}>Manager</Text>
       </TouchableOpacity>
